@@ -22,6 +22,7 @@ From your rails directory
         self.permalink
       end
     end
+
 #### Layout: yield to a :fb block in your layout for the opengraph tags we'll be drawing
     <html>
       <head>
@@ -39,6 +40,7 @@ From your rails directory
     <div class="movie">
       <h1><%= @movie.title %></h1>
     </div>
+
 #### View: Show the like button
     <div class="movie-comments">
       <span><%= @movie.like_button %></span>
