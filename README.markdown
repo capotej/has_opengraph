@@ -8,6 +8,8 @@ From your rails directory
 
 ### Example Usage
 
+
+
 #### Model: map opengraph values to fields/methods in your model
     class Movie < ActiveRecord::Base
       has_opengraph :title => :name,
@@ -37,9 +39,7 @@ From your rails directory
     <div class="movie">
       <h1><%= @movie.title %></h1>
     </div>
-    ...
-
-    # now you can display the like button for any model instance 
+#### View: Show the like button
     <div class="movie-comments">
       <span><%= @movie.like_button %></span>
     </div>
