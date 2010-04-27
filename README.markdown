@@ -7,8 +7,8 @@ From your rails directory
     script/plugin install http://github.com/capotej/has_opengraph.git
 
 ### Example Usage
-#### In your model
-map opengraph values to fields/methods in your model
+
+#### Model: map opengraph values to fields/methods in your model
     class Movie < ActiveRecord::Base
       has_opengraph :title => :name,
                     :url => :get_url,
@@ -20,8 +20,7 @@ map opengraph values to fields/methods in your model
         self.permalink
       end
     end
-#### In your layout
-yield to a :fb block in your layout for the opengraph tags we'll be drawing
+#### Layout: yield to a :fb block in your layout for the opengraph tags we'll be drawing
     <html>
       <head>
         <%= yield :fb %>
@@ -31,8 +30,7 @@ yield to a :fb block in your layout for the opengraph tags we'll be drawing
       </body>
     </html>    
 
-#### In your view
-pass the opengraph meta tags to our content_for block
+#### View: Pass the opengraph meta tags to our content_for block
     <% content_for :fb do %>
       @movie.draw_opengraph
     <% end %>
