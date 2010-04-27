@@ -4,6 +4,11 @@ module HasOpenGraph
     base.send :extend, ClassMethods
   end
 
+  def fb_meta_tag(k,v)
+    '<meta xmlns:og="http://opengraphprotocol.org/schema/" property="og:' << k.to_s << '" content="' << CGI.escapeHTML(v) << '"/>'
+  end
+
+
   module ClassMethods
     # any method placed here will apply to classes, like Hickwall
     def has_opengraph(opts = {})
@@ -28,10 +33,10 @@ module HasOpenGraph
       self.class.opengraph.each do |k,v|
         if v.class == Symbol
           if res = self.send(v)
-            str << '<meta property="og:' << k.to_s << '" content="' << res << '"/>'
+            str << fb_meta_tag(k,res)
           end
         else
-          str << '<meta property="og:' << k.to_s << '" content="' << v << '"/>'
+          str << fb_meta_tag(k,v)
         end
       end
       str
