@@ -7,8 +7,8 @@ From your rails directory
     script/plugin install http://github.com/capotej/has_opengraph.git
 
 ### Example Usage
-Then you can just use it like so:
-    # map opengraph values to fields/methods in your model
+#### In your model
+map opengraph values to fields/methods in your model
     class Movie < ActiveRecord::Base
       has_opengraph :title => :name,
                     :url => :get_url,
@@ -20,8 +20,8 @@ Then you can just use it like so:
         self.permalink
       end
     end
-
-    # yield to a :fb block in your layout for the opengraph tags we'll be drawing
+#### In your layout
+yield to a :fb block in your layout for the opengraph tags we'll be drawing
     <html>
       <head>
         <%= yield :fb %>
@@ -31,7 +31,8 @@ Then you can just use it like so:
       </body>
     </html>    
 
-    # pass the opengraph meta tags to our content_for block
+#### In your view
+pass the opengraph meta tags to our content_for block
     <% content_for :fb do %>
       @movie.draw_opengraph
     <% end %>
@@ -47,4 +48,4 @@ Then you can just use it like so:
 
 ### License
 
-Copyright (c) 2010 ModernMethod, released under the MIT license
+Copyright (c) 2010 Julio Capote, released under the MIT license
