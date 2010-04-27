@@ -655,3 +655,17 @@
   [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
   [4;36;1mHasOpengraphTest::Movie Create (0.4ms)[0m   [0;1mINSERT INTO "movies" ("name", "descr", "cover_image_url", "genre") VALUES('Under Siege 2', 'Steve Segal tears it up', 'http://path/to/image.jpg', NULL)[0m
   [4;35;1mHasOpengraphTest::Movie Create (0.3ms)[0m   [0mINSERT INTO "movies" ("name", "descr", "cover_image_url", "genre") VALUES('Under Siege 2', 'Steve Segal tears it up', 'http://path/to/image.jpg', NULL)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mDROP TABLE "movies"[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "genre" varchar(255), "descr" varchar(255), "cover_image_url" varchar(255)) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mHasOpengraphTest::Movie Create (0.3ms)[0m   [0;1mINSERT INTO "movies" ("name", "descr", "cover_image_url", "genre") VALUES('Under Siege 2', 'Steve Segal tears it up', 'http://path/to/image.jpg', NULL)[0m
+  [4;35;1mHasOpengraphTest::Movie Create (0.4ms)[0m   [0mINSERT INTO "movies" ("name", "descr", "cover_image_url", "genre") VALUES('Under Siege 2', 'Steve Segal tears it up', 'http://path/to/image.jpg', NULL)[0m

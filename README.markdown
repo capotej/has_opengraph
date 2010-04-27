@@ -4,7 +4,7 @@ Easily generate [facebook opengraph](http://developers.facebook.com/docs/opengra
 ### Installation
 From your rails directory
 
-    script/plugin install git://github.com/destructoid/has_opengraph.git
+    script/plugin install git://github.com/capotej/has_opengraph.git
 
 ### Example Usage
 Then you can just use it like so:
